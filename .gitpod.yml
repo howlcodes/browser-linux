@@ -2,7 +2,9 @@ image: gitpod/workspace-full
 
 tasks:
   - init: |
-      # Update packages
+      # Make start.sh executable
+      chmod +x start.sh
+      # Install Linux packages
       sudo apt update
       sudo apt install -y xfce4 xfce4-goodies tightvncserver git python3-websockify
       git clone https://github.com/novnc/noVNC.git ~/noVNC
