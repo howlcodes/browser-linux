@@ -1,1 +1,16 @@
+image: gitpod/workspace-full
 
+tasks:
+  - init: |
+      # Update packages
+      sudo apt update
+      sudo apt install -y xfce4 xfce4-goodies tightvncserver git python3-websockify
+      git clone https://github.com/novnc/noVNC.git ~/noVNC
+    command: |
+      # Start VNC + noVNC
+      bash start.sh
+
+ports:
+  - port: 6080
+    onOpen: open-preview
+    visibility: public
